@@ -15,14 +15,20 @@
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
 		<ul>
-			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
+			<li class:active={$page.url.pathname === '/'}>
+				<a class:active={$page.url.pathname === '/'} sveltekit:prefetch href="/">Home</a>
+			</li>
 			<li class:active={$page.url.pathname === '/about'}>
-				<a sveltekit:prefetch href="/about">About</a>
+				<a class:active={$page.url.pathname === '/about'} sveltekit:prefetch href="/about">About</a>
 			</li>
 			<li class:active={$page.url.pathname === '/todos'}>
-				<a sveltekit:prefetch href="/todos">Todos</a>
-			</li>	<li class:active={$page.url.pathname === '/moon'}>
-				<a sveltekit:prefetch href="/moon">Moon</a>
+				<a class:active={$page.url.pathname === '/todos'} sveltekit:prefetch href="/todos">Todos</a>
+			</li>
+			<li class:active={$page.url.pathname === '/moon'}>
+				<a class:active={$page.url.pathname === '/moon'} sveltekit:prefetch href="/moon">Moon</a>
+			</li>
+			<li class:active={$page.url.pathname === '/star'}>
+				<a class:active={$page.url.pathname === '/star'} sveltekit:prefetch href="/star" >Star</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -120,7 +126,8 @@
 		transition: color 0.2s linear;
 	}
 
-	a:hover {
+	a:hover,
+	a.active{
 		color: var(--accent-color);
 	}
 </style>
